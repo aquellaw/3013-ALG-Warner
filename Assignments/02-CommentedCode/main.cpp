@@ -43,7 +43,31 @@ struct Node {
         next = NULL;
     }
 };
-
+/**
+ * List
+ * 
+ * Description:
+ *      Description of your class and what it does
+ * 
+ * Public Methods:
+ *                          List()
+ *      void                Push(int value)
+ *      void                Insert()
+ *      void                Printtail()
+ *      string              print()
+ *      int                 pop()
+ * 
+ * Private Methods:
+ *      - A list of 
+ *      - each private method
+ *      - with return types
+ * 
+ * Usage: 
+ * 
+ *      - examples of how
+ *      - to use your class 
+ *      
+ */
 class List {
 private:
     Node *Head;
@@ -51,11 +75,35 @@ private:
     int Size;
 
 public:
+     /**
+     * Public : List
+     * 
+     * Description:
+     *      Initializes private member variables
+     * 
+     * Params:
+     *     None
+     * 
+     * Returns:
+     *     None
+     */
     List() {
         Head = Tail = NULL;
         Size = 0;
     }
 
+     /**
+     * Public : Push
+     * 
+     * Description:
+     *      Pushes a value at the end of a linked list.
+     * 
+     * Params:
+     *      int     :  value being pushed onto list.
+     * 
+     * Returns:
+     *      Void   : does not return anything
+     */
     void Push(int val) {
         // allocate new memory and init node
         Node *Temp = new Node(val);
@@ -69,6 +117,18 @@ public:
         Size++;
     }
 
+     /**
+     * Public : Insert
+     * 
+     * Description:
+     *      Inserts at the head of a linked list.
+     * 
+     * Params:
+     *      int    : value being pushed onto list.
+     * 
+     * Returns:
+     *      Void   : does not return anything
+     */
     void Insert(int val) {
         // allocate new memory and init node
         Node *Temp = new Node(val);
@@ -83,10 +143,35 @@ public:
         Size++;
     }
 
+     /**
+     * Public : PrintTail
+     * 
+     * Description:
+     *      Prints the value stored in memory location tail points to.
+     * 
+     * Params:
+     *      None
+     * 
+     * Returns:
+     *      Void    : does not return anything.
+     */
     void PrintTail() {
         cout << Tail->x << endl;
     }
 
+     /**
+     * Public : Print
+     * 
+     * Description:
+     *      Loads an array of integerts into a linked list.
+     * 
+     * Params:
+     *      int*    :  array of integers
+     *      int     :  array size
+     * 
+     * Returns:
+     *      string   : a word.
+     */
     string Print() {
         Node *Temp = Head;
         string list;
@@ -99,6 +184,19 @@ public:
         return list;
     }
 
+     /**
+     * Public : Pop
+     * 
+     * Description:
+     *      Loads an array of integerts into a linked list.
+     * 
+     * Params:
+     *      int*    :  array of integers
+     *      int     :  array size
+     * 
+     * Returns:
+     *      List*   : a pointer to a linked list of integers.
+     */
     // not implemented
     int Pop() {
         Size--;
