@@ -8,7 +8,7 @@
 // Semester:         Spring 2020
 //
 // Description:
-//       This program implements a class that allows a linked list to be used just like 
+//       This program implements a class which allows a linked list to be used similarly to 
 //       an array. It overloads the "[]" (square brackets) to simulate accessing seperate 
 //       array elements, but really it traverses the list to find the specified node using
 //       an index value. It also overloads the "+" and "-" signs allowing a user to "add"
@@ -31,6 +31,14 @@ using namespace std;
 
 int A[100];
 
+/**
+ * Struct
+ * 
+ * Description:
+ *       Node struct is used to create a linked list.
+ * 
+ *      
+ */
 struct Node {
     int x;
     Node *next;
@@ -47,7 +55,7 @@ struct Node {
  * List
  * 
  * Description:
- *      Description of your class and what it does
+ *      Class implements a list with use of a node struct
  * 
  * Public Methods:
  *                          List()
@@ -58,21 +66,19 @@ struct Node {
  *      int                 pop()
  * 
  * Private Methods:
- *      - A list of 
- *      - each private method
- *      - with return types
+ *      None
  * 
  * Usage: 
  * 
- *      - examples of how
- *      - to use your class 
+ *       List L1            //Constructs new list.
+ *       L1.Push(i)         //Pushes value onto list.
  *      
  */
 class List {
 private:
-    Node *Head;
-    Node *Tail;
-    int Size;
+    Node *Head;             //Head pointer
+    Node *Tail;             //Tail pointer
+    int Size;               //Size of array
 
 public:
      /**
@@ -188,14 +194,13 @@ public:
      * Public : Pop
      * 
      * Description:
-     *      Loads an array of integerts into a linked list.
+     *      Removes values for the linked list then list decreases.
      * 
      * Params:
-     *      int*    :  array of integers
-     *      int     :  array size
+     *      None
      * 
      * Returns:
-     *      List*   : a pointer to a linked list of integers.
+     *      int   :  zero.
      */
     // not implemented
     int Pop() {
@@ -203,6 +208,18 @@ public:
         return 0; //
     }
 
+      /**
+     * Public : operator+
+     * 
+     * Description:
+     *      Overloads addition operator to joins two linked lists together.
+     * 
+     * Params:
+     *      List    :  a list.
+     * 
+     * Returns:
+     *      List    :  new concatenated list.
+     */
     List operator+(const List &Rhs) {
         // Create a new list that will contain both when done
         List NewList;
@@ -229,6 +246,18 @@ public:
         return NewList;
     }
 
+      /**
+     * Public : operator[]
+     * 
+     * Description:
+     *      Overloads brackets to create an array of linked lists.
+     * 
+     * Params:
+     *      int    :  array index.
+     * 
+     * Returns:
+     *      int    :  returns the current value at array index.
+     */
     // Implementation of [] operator.  This function returns an
     // int value as if the list were an array.
     int operator[](int index) {
@@ -246,6 +275,19 @@ public:
         }
     }
 
+      /**
+     * Public : operator<<
+     * 
+     * Description:
+     *      Overloads extraction operator to allow linked lists to be printed.
+     * 
+     * Params:
+     *      ostream    : ostream variable
+     *      List       : a list.
+     * 
+     * Returns:
+     *      ostream    : information extracted from list.
+     */
     friend ostream &operator<<(ostream &os, List L) {
         os << L.Print();
         return os;
@@ -256,21 +298,26 @@ int main(int argc, char **argv) {
     List L1;
     List L2;
 
+    //Used to push values onto the first list
     for (int i = 0; i < 25; i++) {
         L1.Push(i);
     }
 
+    //Used to push values onto the second list
     for (int i = 50; i < 100; i++) {
         L2.Push(i);
     }
 
+    //Prints the tail for lists 1 and list 2
     //cout << L1 << endl;
     L1.PrintTail();
     L2.PrintTail();
 
+    //Adds two lists together
     List L3 = L1 + L2;
     cout << L3 << endl;
 
+    //Prints the value at index 5 in list 3
     cout << L3[5] << endl;
     return 0;
 }
