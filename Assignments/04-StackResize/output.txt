@@ -1,0 +1,7 @@
+Assignment 4 - Resizing the Stack
+CMPS 3013
+Aquella Warner
+
+Max Stack Size: 40831
+End Stack Size: 8
+Stack Resized: 29 times.
