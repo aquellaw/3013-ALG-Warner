@@ -1,0 +1,265 @@
+///////////////////////////////////////////////////////////////////////////////
+//                   
+// Author:           Aquella Warner
+// Email:            aquellawarner@hotmail.com
+// Label:            P02
+// Title:            Assignment #5 - Processing in Linear Time
+// Course:           CMPS 3013
+// Semester:         Spring 2020
+//
+// Description:
+//       describe program here thoroughly 
+//
+// Usage:
+//       how to use the program if necessary
+//
+// Files:            (list of all source files used in this program)
+////////////////////////////////////////////////////////////////////////////////
+#include <iostream>
+#include <string>
+#include <time.h>
+#include <chrono>
+#include "mygetch.hpp"
+#include "JsonFacade.hpp"
+#include "Timer.hpp"
+
+using namespace std;
+
+class List
+{
+	struct WordNode
+	{
+		string word;
+		string definition;
+		WordNode *next;
+	};
+public:
+	// requires : List is not created
+// ensures : List is created and empty
+	List()
+	{
+		WordNode * dummyN = new WordNode;
+		dummyN->next = nullptr;
+		head = dummyN;
+		cursor = dummyN;
+		count = 0;
+	} 
+	List(List & other)
+	{
+		string Word;
+		WordNode * temp;
+		WordNode * dummyN = new WordNode;
+		dummyN->next = nullptr;
+		head = dummyN;
+		cursor = dummyN;
+		count = 0;
+		//construct empty list - same code as in default constructor goes here
+
+
+		//copy items in other to this list
+		other.cursor = other.head;
+		while (other.cursor->next != nullptr)
+		{
+			Word = other.cursor->next->word;
+
+			temp = new WordNode;
+			temp->word = Word;
+			temp->next = cursor->next;
+			cursor->next = temp;
+			count++;
+
+			other.cursor = other.cursor->next;
+			cursor = cursor->next;
+		}
+	}
+
+
+	// requires : List is created
+	// ensures : List is not created
+	~List()
+	{
+		WordNode * temp;
+		ResetCursor();
+		temp = cursor;
+
+		while (temp != nullptr)
+		{
+			cursor = cursor->next;
+			delete temp;
+			temp = cursor;
+		}
+		//starting at head of list, delete all nodes
+
+		head = cursor = temp = nullptr;
+		// dispose of dummy node
+
+	}   
+
+	//requires: List is created
+	//ensures:  List is empty
+	void ClearList()
+	{
+		ResetCursor();
+		while (!CursorAtEnd())
+			DeleteItem();
+	}
+
+	//requires: this list and other are created
+	//ensures:   this = #other and other = #list, except that cursors are at heads
+	void SwapLists(List & other)
+	{
+		WordNode * temp;
+		int tempCount;
+
+		//swap cursors 
+		temp = cursor;
+		cursor = other.cursor;
+		other.cursor = temp;
+
+		//swap heads
+		temp = head;
+		head = other.head;
+		other.head = temp;
+
+		//swap counts
+		tempCount = count;
+		count = other.count;
+		other.count = count;
+	}
+
+	// requires : List is created
+	// ensures : List's cursor is placed before the first item in the sequence,
+	//           and the sequence is unchanged
+	void ResetCursor()
+	{
+		cursor = head;
+	}   
+
+	// requires : L is created
+	// ensures : returns true iff L's cursor is located after
+	//           the last item in the sequence.  L is not changed
+	bool CursorAtEnd()
+	{
+		if (cursor->next = nullptr)
+			return true;
+		else
+			return false;
+		// cursor at end
+	}
+
+	// requires : List is created and the cursor is not at the end of the sequence
+	// ensures : Return in Item the item referenced by L's cursor.  The sequence
+	//           is unchanged and the cursor is not moved
+	// checks :  if Cursor is at the end of the list, write error message
+	void GetCurrentItem(string & Word)
+	{
+		if (cursor->next != nullptr)
+			Word = cursor->next->word;
+		else
+			cout << "ERROR : cursor at end cannot get current item" << endl;
+	}
+
+	// requires : L is created and the cursor is not at the end of the sequence
+	// ensures : the item referenced by L's cursor is set to the value of I;
+	//            The sequence is unchanged otherwise and the cursor is not moved
+	// checks : if Cursor is at the end of the list, write error message
+	void UpdateCurrentItem(const string & Word)
+	{
+		if (cursor->next == nullptr)
+			cout << "ERROR : cursor at end cannot get current item" << endl;
+		else
+			cursor->next->word = Word;
+	}  
+
+	// requires : List is created and the cursor is not at the end of the sequence
+	// ensures : List's cursor is advanced one position in the sequence and the
+	//           sequence is unchanged
+	// checks : if Cursor is at the end of the list, write error message
+	void AdvanceCursor()
+	{
+		if (cursor->next == nullptr)
+			cout << "ERROR : cursor at end cannot advance cursor" << endl;
+		else
+			cursor = cursor->next;
+	}        // advance cursor
+
+	// requires : List is created
+	// ensures : Item is inserted at the position of L's cursor. Otherwise the  
+	//           sequence is unchanged and the cursor is located before the
+	//           inserted item  
+	void InsertItem(const string & Word)
+	{
+		WordNode* temp;
+		temp = new WordNode;
+
+
+		if (cursor != head)
+		{
+			temp->word = Word;
+			temp->next = cursor->next;
+			cursor->next = temp;
+		}
+		else
+		{
+
+			temp->word = Word;
+			temp->next = nullptr;
+			cursor->next = temp;
+		}
+
+		count++;
+	}
+
+	// requires : List is created and the cursor is not at the end of the sequence
+	// ensures : the item at the position referenced by L's cursor is deleted.
+	//           Otherwise the sequence is unchanged and the cursor is located
+	//           before the next item in the sequence
+	// checks : if cursor is at the end of the list, write error message
+	void DeleteItem()
+	{
+		WordNode * temp;
+
+		if (cursor->next == nullptr)
+			cout << "ERROR : cursor at end cannot delete item" << endl;
+		else
+		{
+			temp = cursor->next;
+			cursor->next = temp->next;
+			delete temp;
+			count--;
+		}
+	}        // delete item
+
+	//requires: List is created
+	//ensures: the number of items in the list is returned
+	int getCount() {
+		return count;
+	}
+private:
+	WordNode *head;
+	WordNode *cursor;
+	int count;
+};
+
+int main() {
+	List wordList
+	Timer T;
+	T.Start();
+	JsonFacade J("dict_w_defs.json");   // create instance of json class
+	T.End();
+	double s = T.Seconds();
+	long m = T.MilliSeconds();
+
+	cout << s << " seconds" << endl;
+	cout << m << " milli" << endl;
+	int index = 0;                      // 
+	string key;                         // key variable to access json object
+
+	vector<string> keys = J.getKeys();
+
+	cout << keys.size() << endl;
+	index = rand() % keys.size();
+	key = J.getKey(index);
+
+	cout << key << " = " << J.getValue(key) << endl;
+}
