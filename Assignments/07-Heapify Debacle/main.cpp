@@ -269,13 +269,14 @@ int main() {
 	}
 	*/
 	int size = 20;
+	// Allocation of new memory
 	int *Arr = new int[size];
 
 	for (int i = 1; i < size; i++)
 	{
 		Arr[i];
 	}
-	//Stores 
+	//Stores/ converts an array into a heap  
 	H.Heapify(Arr, size);
 	H.Print();
 
