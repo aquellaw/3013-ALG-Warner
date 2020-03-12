@@ -8,4 +8,4 @@
 |   05  | [05-P02-Processing in Linear Time](https://github.com/aquellaw/3013-ALG-Warner/tree/master/Assignments/05-P02-Processing%20in%20Linear%20Time)   |Linear time processing (using JSON file)|
 |   06  | [06-P03-Processing in Log Time](https://github.com/aquellaw/3013-ALG-Warner/tree/master/Assignments/06-P03-Processing%20in%20Log%20Time)   |Log time processing
 |   07  | [07-H02-Heapify Debacle](https://github.com/aquellaw/3013-ALG-Warner/tree/master/Assignments/07-Heapify%20Debacle)   |Heapify
-|   09  | [https://github.com/aquellaw/3013-ALG-Warner/tree/master/Assignments/H03)|Big O & Complexities
+|   09  | [https://github.com/aquellaw/3013-ALG-Warner/tree/master/Assignments/H03)  |Big O & Complexities
