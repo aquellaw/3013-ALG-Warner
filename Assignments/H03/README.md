@@ -54,26 +54,26 @@ In each of the following examples, please choose the best data structure(s).
 - 10) Note that there may not be one clear answer.
 
 - 10) You have to store social network “feeds”. You do not know the size, and things may need to be dynamically added.
-    List
+    **List**
 - 11) You need to store undo/redo operations in a word processor.
-    Stack
+    **Stack**
 - 12) You need to evaluate an expression (i.e., parse). 
-    Stack
+    **Stack**
 - 13) You need to store the friendship information on a social networking site. I.e., who is friends with who.
-    Graph
+    **Graph**
 - 14) You need to store an image (1000 by 1000 pixels) as a bitmap.
-    2D Array
+    **2D Array**
 - 15) To implement printer spooler so that jobs can be printed in the order of their arrival. 
-    Queue
+    **Queue**
 - 16) To implement back functionality in the internet browser.
-    Stack
+    **Stack**
 - 17) To store the possible moves in a chess game.
-    Directional Graph
+    **Directional Graph**
 - 18) To store a set of fixed key words which are referenced very frequently.
-    Hash Table (Order 1 lookup)
+    **Hash Table (Order 1 lookup)**
 - 19) To store the customer order information in a drive-in burger place. (Customers keep on coming and they have to get their correct food at the payment/food collection window.)
-    Queue
+    **Queue**
 - 20) To store the genealogy information of biological species.
-    Tree
+    **Tree**
 - 21) To store an alphabetized list of names in order to look up quickly.
-    List
+    **List**
