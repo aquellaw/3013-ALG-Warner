@@ -13,3 +13,7 @@
 |   10  | [10-P04-459](https://github.com/aquellaw/3013-ALG-Warner/tree/master/Assignments/459)  |Graph Connectivity
 |   11  | [11-P05-484](https://github.com/aquellaw/3013-ALG-Warner/tree/master/Assignments/484)  |STL Maps
 |   12  | [12-P06-11597](https://github.com/aquellaw/3013-ALG-Warner/tree/master/Assignments/11597)  |Spanning Subtrees
+|   13  | [13-P07-1112](https://github.com/aquellaw/3013-ALG-Warner/tree/master/Assignments/1112)  |Shortest Path
+|   14  | [14-P08-10901](https://github.com/aquellaw/3013-ALG-Warner/tree/master/Assignments/10901)  |Ferry Loading
+|   14  | [14-P08-10261](https://github.com/aquellaw/3013-ALG-Warner/tree/master/Assignments/10261)  |Ferry Loading
+|   14  | [14-P08-10440](https://github.com/aquellaw/3013-ALG-Warner/tree/master/Assignments/10440)  |Ferry Loading
