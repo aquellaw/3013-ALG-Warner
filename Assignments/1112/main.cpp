@@ -79,15 +79,15 @@ int main()
 
 			dijkstras(exitCell);
 
-			int mCount = 0;
+			int counter = 0;
 
 			for (int i = 1; i <= numC; i++)
 			{
 				if (distanceG[i] <= timer)
-					mCount++;
+					counter++;
 			}
 
-			cout << mCount << '\n';
+			cout << counter << '\n';
 
 			if (total > 0)
 			{
@@ -97,4 +97,3 @@ int main()
 	}
 	return 0;
 }
-
