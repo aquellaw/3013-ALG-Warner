@@ -62,7 +62,7 @@ void dijkstras(int x)
 
 int main()
 {
-	int total, m1, m2, m3;
+	int total, line1, line2, line3;
 
 	cin >> total;
 	while (total--)
@@ -71,8 +71,8 @@ int main()
 
 		while (m_connects)
 		{
-			cin >> m1 >> m2 >> m3;
-			matrix[m2].push_back(ii(m1, m3));
+			cin >> line1 >> line2 >> line3;
+			matrix[line2].push_back(ii(line1, line3));
 
 			m_connects--;
 		}
