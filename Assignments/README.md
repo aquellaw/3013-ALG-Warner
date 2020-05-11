@@ -13,7 +13,5 @@
 |   11-P05  | [11-P05-484](https://github.com/aquellaw/3013-ALG-Warner/tree/master/Assignments/484)  |STL Maps
 |   12-P06  | [12-P06-11597](https://github.com/aquellaw/3013-ALG-Warner/tree/master/Assignments/11597)  |Spanning Subtrees
 |   13-P07  | [13-P07-1112](https://github.com/aquellaw/3013-ALG-Warner/tree/master/Assignments/1112)  |Shortest Path
-|   14-P08  | [14-P08-10901](https://github.com/aquellaw/3013-ALG-Warner/tree/master/Assignments/10901)  |Ferry Loading
-|   14  | [14-P08-10261](https://github.com/aquellaw/3013-ALG-Warner/tree/master/Assignments/10261)  |Ferry Loading
-|   14  | [14-P08-10440](https://github.com/aquellaw/3013-ALG-Warner/tree/master/Assignments/10440)  |Ferry Loading
-|   15-F01  | [Final Exam](https://github.com/aquellaw/3013-ALG-Warner/tree/master/Assignments/Final%20Exam)  | Many Topics | 05-13-2020 (Wednesday @ 11:30 p.m
+|   14-P08  | [14-P08-10901](https://github.com/aquellaw/3013-ALG-Warner/tree/master/Assignments/Ferry%20Loading)  |Ferry Loading
+|   15-F01  | [Final Exam](https://github.com/aquellaw/3013-ALG-Warner/tree/master/Assignments/Final%20Exam)  | 
